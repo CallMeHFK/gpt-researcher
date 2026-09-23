@@ -28,6 +28,7 @@
 | BoCha | `BoChaSearch` | `BOCHA_API_KEY` |
 | Xquik | `XquikSearch` | `XQUIK_API_KEY` |
 | GetXAPI (X/Twitter) | `GetXAPISearch` | `GETXAPI_API_KEY` |
+| AnySearch | `AnySearchRetriever` | `ANYSEARCH_API_KEY` (optional; works anonymously), vertical via `ANYSEARCH_TAG` |
 | arXiv | `ArxivSearch` | None |
 | Semantic Scholar | `SemanticScholarSearch` | None |
 | PubMed Central | `PubMedCentralSearch` | None |
