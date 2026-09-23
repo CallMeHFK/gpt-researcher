@@ -35,6 +35,7 @@ def _load_scraper_module():
     scraper_pkg.__path__ = [str(root / "gpt_researcher" / "scraper")]
     # Provide dummy scraper classes referenced by scraper.py imports
     for name in (
+        "AnySearchExtract",
         "ArxivScraper",
         "BeautifulSoupScraper",
         "BrowserScraper",
@@ -68,6 +69,7 @@ def _load_scraper_module():
     import gpt_researcher.scraper as sp  # noqa
 
     for name in (
+        "AnySearchExtract",
         "ArxivScraper",
         "BeautifulSoupScraper",
         "BrowserScraper",
