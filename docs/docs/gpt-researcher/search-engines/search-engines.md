@@ -44,6 +44,7 @@ Thanks to our community, we have integrated the following web search engines and
 - [OpenAlex](https://docs.openalex.org/) - Env: `RETRIEVER=openalex`; optional `OPENALEX_EMAIL` and `OPENALEX_API_KEY`
 - [Semantic Scholar](https://www.semanticscholar.org/product/api) - Env: `RETRIEVER=semantic_scholar`
 - [Exa](https://docs.exa.ai/reference/getting-started) - Env: `RETRIEVER=exa`
+- [AnySearch](https://anysearch.com/) - Env: `RETRIEVER=anysearch`; optional `ANYSEARCH_API_KEY` and `ANYSEARCH_TAG` - [Setup Guide](#anysearch)
 - [fastCRW](https://fastcrw.com/docs/rest-api) - Env: `RETRIEVER=crw`
 - [PubMedCentral](https://www.ncbi.nlm.nih.gov/home/develop/api/) - Env: `RETRIEVER=pubmed_central`
 - [Xquik](https://xquik.com/) - Env: `RETRIEVER=xquik` and `XQUIK_API_KEY`
@@ -142,5 +143,29 @@ RETRIEVER=pubmed_central
 NCBI_API_KEY=your_api_key_here      # Optional; improves NCBI rate limits
 PUBMED_DB=pmc                       # Optional; defaults to pmc
 ```
+
+### AnySearch
+
+To use [AnySearch](https://anysearch.com/) as your search engine:
+
+```bash
+RETRIEVER=anysearch
+```
+
+AnySearch works without an API key (anonymous access, lower rate limits). Create a free key at [anysearch.com/console/api-keys](https://anysearch.com/console/api-keys) for higher limits:
+
+```bash
+RETRIEVER=anysearch
+ANYSEARCH_API_KEY=your_api_key_here   # Optional
+ANYSEARCH_TAG=finance.quotes          # Optional; vertical domain search (domain.sub_domain)
+```
+
+AnySearch also offers a hosted content extractor usable as a scraping backend, with the same anonymous fallback:
+
+```bash
+SCRAPER=anysearch_extract
+```
+
+See the [AnySearch integration guide](./anysearch) for endpoint and maintenance details.
 
 Missing a retriever? Feel free to contribute to this project by submitting issues or pull requests on our [GitHub](https://github.com/assafelovic/gpt-researcher) page.

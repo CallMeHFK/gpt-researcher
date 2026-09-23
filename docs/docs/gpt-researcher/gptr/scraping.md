@@ -32,6 +32,11 @@ You can choose your preferred scraping method by setting the `SCRAPER` environme
    export SCRAPER="firecrawl"
    ```
 
+4. For **production** use cases, you can also set the Scraper to `anysearch_extract`. [AnySearch](https://anysearch.com/) Extract returns clean markdown for a URL and works anonymously without an API key (with lower rate limits); set `ANYSEARCH_API_KEY` for higher limits. No extra pip package is needed (it uses `requests`, already a core dependency). Then:
+   ```bash
+   export SCRAPER="anysearch_extract"
+   ```
+
 Note: If not set, GPT Researcher will default to BeautifulSoup for scraping.
 
 ## Scraping Methods Explained

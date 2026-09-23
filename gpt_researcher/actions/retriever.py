@@ -34,6 +34,7 @@ def get_retriever(retriever: str):
         - mcp: Model Context Protocol retriever
         - xquik: Xquik X/Twitter search
         - getxapi: GetXAPI X/Twitter search
+        - anysearch: AnySearch unified search (general and vertical)
     """
     match retriever:
         case "google":
@@ -120,6 +121,10 @@ def get_retriever(retriever: str):
             from gpt_researcher.retrievers import GetXAPISearch
 
             return GetXAPISearch
+        case "anysearch":
+            from gpt_researcher.retrievers import AnySearchRetriever
+
+            return AnySearchRetriever
 
         case _:
             return None

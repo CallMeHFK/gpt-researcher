@@ -18,6 +18,7 @@ from gpt_researcher.utils.workers import WorkerPool
 from gpt_researcher.utils.url_security import UnsafeURLError, validate_url
 
 from . import (
+    AnySearchExtract,
     ArxivScraper,
     BeautifulSoupScraper,
     BrowserScraper,
@@ -330,6 +331,7 @@ class Scraper:
             "nodriver": NoDriverScraper,
             "tavily_extract": TavilyExtract,
             "firecrawl": FireCrawl,
+            "anysearch_extract": AnySearchExtract,
         }
 
         scraper_key = None
