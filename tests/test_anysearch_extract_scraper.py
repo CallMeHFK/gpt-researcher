@@ -65,7 +65,12 @@ class TestAnySearchExtract(unittest.TestCase):
     @patch("gpt_researcher.scraper.anysearch_extract.anysearch_extract.requests.post")
     def test_empty_content_returns_empty_tuple(self, mock_post):
         mock_post.return_value = MagicMock(
-            json=MagicMock(return_value={"code": 0, "data": {"title": "T", "content": ""}})
+            json=MagicMock(
+                return_value={
+                    "code": 0,
+                    "data": {"title": "T", "content": ""},
+                }
+            )
         )
 
         with patch.dict(os.environ, {}, clear=True):

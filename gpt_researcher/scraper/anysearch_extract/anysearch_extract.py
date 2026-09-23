@@ -58,7 +58,11 @@ class AnySearchExtract:
             # Application-level failures carry a non-zero `code` even on
             # HTTP 200, so check both the envelope and the payload shape.
             if not isinstance(body, dict) or body.get("code", 0) != 0:
-                message = body.get("message") if isinstance(body, dict) else "malformed response"
+                message = (
+                    body.get("message")
+                    if isinstance(body, dict)
+                    else "malformed response"
+                )
                 self.logger.error(
                     f"AnySearch extract failed for {self.link}: {message}"
                 )
